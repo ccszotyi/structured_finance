@@ -62,7 +62,7 @@ def reserve_handler(
     name = params.get("name") or node.get("id")
     min_balance = params.get("min_balance", 0.0)
     target_balance = params.get("target_balance", 0.0)
-    current_balance = state["reserve_balances"].get(name, 0.0)
+    current_balance = state["reserve_accounts"].get(name, 0.0)
 
     shortfall = max(0.0, target_balance - current_balance)
 
@@ -100,7 +100,7 @@ def reserve_handler(
         state["available_principal"] += release
 
     # update reserve balance
-    state["reserve_balances"][name] = current_balance
+    state["reserve_accounts"][name] = current_balance
     state["allocations"].setdefault(state["period"], []).append({
         "node_id": name,
         "node_type": "reserve",

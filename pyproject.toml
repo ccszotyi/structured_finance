@@ -1,0 +1,14 @@
+[project]
+name = "cashflow-engine"
+version = "0.1.0"
+description = "A cashflow engine for financial applications."
+authors = [
+    { name="max Chen", email="chenclar@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+

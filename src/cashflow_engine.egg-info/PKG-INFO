@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: cashflow-engine
+Version: 0.1.0
+Summary: A cashflow engine for financial applications.
+Author-email: max Chen <chenclar@gmail.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+# structured_finance
