@@ -41,7 +41,7 @@ def apply_waterfall(deal_json: Dict) -> Dict:
     pool_balance = sum(l.get("balance", 0.0) for l in deal_json.get("pool", {}).get("loans", []))
     coupon = deal_json.get("pool", {}).get("coupon", 0.05)
 
-    for period in range(deal_json.get("n_periods", 360)):
+    for period in range(deal_json.get("n_periods", 360) + 1):
         state["period"] = period
         # naive pool cashflow: interest = coupon * pool_balance / 12, principal = amortization slice
         interest = pool_balance * coupon / 12.0
